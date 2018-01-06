@@ -6,8 +6,6 @@ import os
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-chatbot = bot.Bot()
-
 app = Flask(__name__)
 CORS(app)
 if os.environ.get('DATABASE_URL') is None:
@@ -36,6 +34,8 @@ class Spots(db.Model):
         self.lon = lon
 
 db.create_all();
+
+chatbot = bot.Bot()
 
 @app.route('/')
 def index():

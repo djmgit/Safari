@@ -18,13 +18,13 @@
 
 ## Files
 
-***bot_core** - bot library
+**bot_core** - bot library
 
 - bot/bot.py - chatbot, returns answer in json (type, action, param) to be processed by flask server
-- bot/rules.aiml - bot grammar ***(needs to be enhanced for smooth conversation)***
+- bot/rules.aiml - bot grammar **(needs to be enhanced for smooth conversation)**
 - bot/std-startup.xml - entry point of bot
 
-***----- API server ---- ***
+*** API server ***
 
 - main.py - api server. It will interact with the bot to get reply and will then generate result with 
             required information

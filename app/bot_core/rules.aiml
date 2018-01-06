@@ -1,0 +1,78 @@
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- basic_chat.aiml -->
+
+    <category>
+        <pattern>HELLO</pattern>
+        <template>
+            <random>
+                <li>statement*Well hello! How can I help you?</li>
+                <li>statement*Hi!</li>
+                <li>statement*Hi!, what do want you know?</li>               
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HI</pattern>
+        <template>
+            <srai>HELLO</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE IS *</pattern>
+        <template>
+            action*location*<star/>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE IS * LOCATED</pattern>
+        <template>
+            <srai>WHERE IS <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE IS * LOCATION</pattern>
+        <template>
+            <srai>WHERE IS <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>TELL ME ABOUT *</pattern>
+        <template>
+            action*info*<star/>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT DO YOU KNOW ABOUT *</pattern>
+        <template>
+            <srai>TELL ME ABOUT <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HAVE YOU HEARD OF *</pattern>
+        <template>
+            <srai>TELL ME ABOUT <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUGGEST ME SOME PLACES</pattern>
+        <template>
+            action*suggest
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUGGEST ME A TRIP</pattern>
+        <template>
+            <srai>SUGGEST ME SOME PLACES</srai>
+        </template>
+    </category>
+    
+</aiml>

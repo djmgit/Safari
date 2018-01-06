@@ -123,5 +123,229 @@
             <srai>SPECIAL <star/></srai>
         </template>
     </category>
+
+    <category>
+        <pattern>ACTIVITY *</pattern>
+        <template>
+            action*activity*<star/>
+        </template>
+    </category>
+
+    <category>
+        <pattern>THINGS TO DO AT *</pattern>
+        <template>
+            <srai>ACTIVITY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUGGEST ME SOME THINGS TO DO AT *</pattern>
+        <template>
+            <srai>ACTIVITY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUGEGST SOME THINGS TO DO AT *</pattern>
+        <template>
+            <srai>ACTIVITY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT DO YOU SUGGEST TO DO AT *</pattern>
+        <template>
+            <srai>ACTIVITY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT SHOULD WE DO AT *</pattern>
+        <template>
+            <srai>ACTIVITY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* THINGS TO DO</pattern>
+        <template>
+            <srai>ACTIVITY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT TO DO AT *</pattern>
+        <template>
+            <srai>ACTIVITY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>TOV *</pattern>
+        <template>
+            action*tov*<star/>
+        </template>
+    </category>
+
+    <category>
+        <pattern>TIME OF VISTING *</pattern>
+        <template>
+            <srai>TOV <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>TIME OF VISIT *</pattern>
+        <template>
+            <srai>TOV <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>AT WHAT TIME SHOULD I VISIT *</pattern>
+        <template>
+            <srai>TOV <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>TIME TO VISIT *</pattern>
+        <template>
+            <srai>TOV <star/></srai>
+        </template>
+    </category>
+
+     <category>
+        <pattern>BEST TIME FOR VISITING *</pattern>
+        <template>
+            <srai>TOV <star/></srai>
+        </template>
+    </category>
+
+     <category>
+        <pattern>BEST TIME TO VISIT *</pattern>
+        <template>
+            <srai>TOV <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>NEARBY *</pattern>
+        <template>
+            action*nearby*<star/>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT ARE THE PLACES NEARBY *</pattern>
+        <template>
+            <srai>NEARBY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>PLACES WHICH ARE NEARBY TO *</pattern>
+        <template>
+            <srai>NEARBY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>TELL ME SOME PLACES WHICH ARE NEAR TO *</pattern>
+        <template>
+            <srai>NEARBY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>GIVE ME SOME PLACES NEAR *</pattern>
+        <template>
+            <srai>NEARBY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>DO YOU KNOW ANY PLACE NEAR TO *</pattern>
+        <template>
+            <srai>NEARBY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>PLEASE TELL ME SOME PLACES NEAR *</pattern>
+        <template>
+            <srai>NEARBY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUGGEST SOME PLACES NEAR *</pattern>
+        <template>
+            <srai>NEARBY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>NAME SOME PLACES NEAR *</pattern>
+        <template>
+            <srai>NEARBY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SIMILAR *</pattern>
+        <template>
+            action*similar*<star/>
+        </template>
+    </category>
+
+    <category>
+        <pattern>PLACES SIMILAR TO *</pattern>
+        <template>
+            <srai>SIMILAR <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUGGEST ME SOME PLACES SIMILAR TO *</pattern>
+        <template>
+            <srai>SIMILAR <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>TELL ME SIMILAR PLACES LIKE *</pattern>
+        <template>
+            <srai>SIMILAR <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>CAN SUGGEST ME SOME PLACES SIMILAR TO *</pattern>
+        <template>
+            <srai>SIMILAR <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>GIVE ME SIMILAR PLACES LIKE *</pattern>
+        <template>
+            <srai>SIMILAR <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>GIVE ME PLACES SIMILAR TO *</pattern>
+        <template>
+            <srai>SIMILAR <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>I WOULD LOVE TO GO TO PLACES SIMILAR TO *</pattern>
+        <template>
+            <srai>SIMILAR <star/></srai>
+        </template>
+    </category>
     
 </aiml>

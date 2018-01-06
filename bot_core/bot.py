@@ -39,6 +39,10 @@ class Bot:
 			final_response['param'] = response[1]
 
 		if response_type == "action":
+
+			''' Till now action can be of three types
+			    location, info, suggest
+			'''
 			final_response['action'] = response[1]
 			if len(response) == 3:
 				final_response['param'] = response[2]

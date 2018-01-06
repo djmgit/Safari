@@ -37,6 +37,35 @@ def create_response(rtype, action, param):
 
 	return jsonify(response)
 
+def execute_action(action, param):
+	
+	#execute the action here
+
+	response ={}
+
+	if action == 'location':
+		# return location of place defined by param
+		response['location'] = get_location(param)
+	if action == 'info':
+		# return info
+		response['info'] = get_info(param)
+	if action == 'suggest':
+		# return suggestion
+		response['suggestion'] = get_suggestion()
+
+	return response
+
+def get_location(param):
+	# extract location
+	return 'location'
+
+def get_info(param):
+	# extract info
+	return 'info'
+
+def get_suggestion():
+	# generate suggestion
+	return 'suggestion'
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)

@@ -8,6 +8,7 @@
 
 ## Dependencies
 
+- python3
 - AIML
 - python-aiml
 - Flask

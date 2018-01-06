@@ -36,7 +36,7 @@ class Bot:
 		final_response['type'] = response_type
 
 		if response_type == "statement":
-			final_response['reply'] = response[1]
+			final_response['param'] = response[1]
 
 		if response_type == "action":
 			final_response['action'] = response[1]

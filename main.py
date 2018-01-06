@@ -34,7 +34,7 @@ class Spots(db.Model):
     lat = db.Column(db.String)
     lon = db.Column(db.String)
 
-    def __init__(self, name, location, info, lat, lon, special_attraction, things_to_do, time_to_visit, near_by_places, similar_places, how_to_reach):
+    def __init__(self, name='', location='', info='', special_attraction='', things_to_do='', time_to_visit='', near_by_places='', similar_places='', how_to_reach='', lat='', lon=''):
         self.name = name
         self.location = location
         self.info = info
@@ -189,7 +189,7 @@ def get_similar_places(param):
 def get_how_to_reach(param):
 	# extract how to reach
 	item = Spots.query.filter_by(name=param).all()[0]
-	response = item['how_to_reach']
+	response = item.how_to_reach
 	return response
 
 def get_suggestion():

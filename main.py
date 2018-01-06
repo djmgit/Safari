@@ -89,7 +89,7 @@ def execute_action(action, param):
 	
 	#execute the action here
 
-	response ={}
+	response = {}
 
 	if action == 'location':
 		# return location of place defined by param

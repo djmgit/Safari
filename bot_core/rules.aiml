@@ -81,5 +81,47 @@
             <srai>SUGGEST ME SOME PLACES</srai>
         </template>
     </category>
+
+    <category>
+        <pattern>SPECIAL *</pattern>
+        <template>
+            action*special*<star/>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS SPECIAL ABOUT *</pattern>
+        <template>
+            <srai>SPECIAL <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS THE SPECIAL ATTRACTION AT *</pattern>
+        <template>
+            <srai>SPECIAL <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* SPECIALITY</pattern>
+        <template>
+            <srai>SPECIAL <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* SPECIAL ATTRACTION</pattern>
+        <template>
+            <srai>SPECIAL <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* SPECIALITY</pattern>
+        <template>
+            <srai>SPECIAL <star/></srai>
+        </template>
+    </category>
     
 </aiml>

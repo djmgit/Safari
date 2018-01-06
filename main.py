@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_admin import Admin, BaseView, expose
 from flask_admin.contrib.sqla import ModelView
 import os
+import random
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -142,60 +143,103 @@ def execute_action(action, param):
 		response['reply'] = get_how_to_reach(param)
 		response['place_searched'] = param
 
-	response['status'] = 'success'
 	return response
 
 def get_location(param):
 	# extract location
-	item = Spots.query.filter_by(name=param).all()[0]
-	return item['location']
+	items = Spots.query.filter_by(name=param).all()
+	if len(items) != 0:
+		item = items[0]
+		return item.location
+	else:
+		return noinfo_response()
 
 def get_info(param):
 	# extract info
-	item = Spots.query.filter_by(name=param).all()[0]
-	response = 'Here is some info on ' + param + '. ' + item['info']
-	return response
+	items = Spots.query.filter_by(name=param).all()
+	if len(items) != 0:
+		item = items[0]
+		response = 'Here is some info on ' + param + '. ' + item.info
+		return response
+	else:
+		return noinfo_response()
 
 def get_sp_attr(param):
 	# extract special attraction
-	item = Spots.query.filter_by(name=param).all()[0]
-	response = 'Following are some special attractions of ' + param + '. ' + item['special_attraction']
-	return response
+	items = Spots.query.filter_by(name=param).all()
+	if len(items) != 0:
+		item = items[0]
+		response = 'Following are some special attractions of ' + param + '. ' + item.special_attraction
+		return response
+	else:
+		return noinfo_response()
 
 def get_things_to_do(param):
 	# extract things to do
-	item = Spots.query.filter_by(name=param).all()[0]
-	response = 'Here are some things which you might consider doing at ' + param + '. ' + item['things_to_do']
-	return response
+	items = Spots.query.filter_by(name=param).all()
+	if len(items) != 0:
+		item = items[0]
+		response = 'Here are some things which you might consider doing at ' + param + '. ' + item.things_to_do
+		return response
+	else:
+		return noinfo_response()
 
 def get_time_to_visit(param):
 	# extract time to visit
-	item = Spots.query.filter_by(name=param).all()[0]
-	response = 'You may consider visiting ' + param + 'during ' + item['time_to_visit']
-	return response
+	items = Spots.query.filter_by(name=param).all()
+	if len(items) != 0:
+		item = items[0]
+		response = 'You may consider visiting ' + param + 'during ' + item.time_to_visit
+		return response
+	else:
+		return noinfo_response()
 
 def get_near_by_places(param):
 	# extract info
-	item = Spots.query.filter_by(name=param).all()[0]
-	response = 'Here are some places close to ' + param + '. ' + item['near_by_places']
-	return response
+	items = Spots.query.filter_by(name=param).all()
+	if len(items) != 0:
+		item = items[0]
+		response = 'Here are some places close to ' + param + '. ' + item.near_by_places
+		return response
+	else:
+		return noinfo_response()
 
 def get_similar_places(param):
 	# extract info
-	item = Spots.query.filter_by(name=param).all()[0]
-	response = 'Here are some places which are similar to ' + param + '. ' + item['similar_places']
-	return response
+	items = Spots.query.filter_by(name=param).all()
+	if len(items) != 0:
+		item = items
+		response = 'Here are some places which are similar to ' + param + '. ' + item.similar_places
+		return response
+	else:
+		return noinfo_response()
 
 def get_how_to_reach(param):
 	# extract how to reach
-	item = Spots.query.filter_by(name=param).all()[0]
-	response = item.how_to_reach
-	return response
+	items = Spots.query.filter_by(name=param).all()
+	if len(items) != 0:
+		item = items[0]
+		response = item.how_to_reach
+		return response
+	else:
+		return noinfo_response()
 
 def get_suggestion():
 	# generate suggestion
 	return 'suggestion'
 
+def noinfo_response():
+	response_list = [
+		"Sorry! I cannot answer that",
+		"I don't know, I am still learning",
+		"I don't have an answer for that, I have yet a long way to go",
+		"I am afraid I do not have a suitable answer for this",
+		"I have no answer for this now, but someday I shall learn!"
+	];
+
+	return response_list[random.randint(0, 4)]
+
+# start the server
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
 

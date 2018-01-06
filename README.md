@@ -40,8 +40,12 @@
 - Flask reads the response, extracts required information, in this case info on purulia
 - Flask generates response and serves it in form of json
 
-## Endpoint
+## Endpoints
 
 - ```http://127.0.0.1:5000/api/chat?q=[user_input]```
 
 - For example: ```http://127.0.0.1:5000/api/chat?q=tell%20me%20something%20about%20purulia```
+
+**Admin for adding data**
+
+- ```http://127.0.0.1:5000/admin/```

@@ -93,15 +93,42 @@ def execute_action(action, param):
 
 	if action == 'location':
 		# return location of place defined by param
-		response['location'] = get_location(param)
+		response['reply'] = get_location(param)
 		response['place_searched'] = param
+
 	if action == 'info':
 		# return info
-		response['info'] = get_info(param)
+		response['reply'] = get_info(param)
 		response['place_searched'] = param
+
 	if action == 'suggest':
 		# return suggestion
-		response['suggestion'] = get_suggestion()
+		response['reply'] = get_suggestion()
+
+	if action == 'special':
+		# return special attraction
+		response['reply'] = get_sp_attr(param)
+		response['place_searched'] = param
+
+	if action == 'activity':
+		# return things to do
+		response['reply'] = get_things_to_do(param)
+		response['place_searched'] = param
+
+	if action == 'tov':
+		# return time to visit
+		response['reply'] = get_time_to_visit(param)
+		response['place_searched'] = param
+
+	if action == 'nearby':
+		# return nearby places
+		response['reply'] = get_near_by_places(param)
+		response['place_searched'] = param
+
+	if action == 'similar':
+		# return similar places
+		response['reply'] = get_similar_places(param)
+		response['place_searched'] = param
 
 	response['status'] = 'success'
 	return response

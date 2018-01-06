@@ -61,6 +61,13 @@
         </template>
     </category>
 
+     <category>
+        <pattern>TELL ME SOMETHING ABOUT *</pattern>
+        <template>
+            <srai>TELL ME ABOUT <star/></srai>
+        </template>
+    </category>
+
     <category>
         <pattern>SUGGEST ME SOME PLACES</pattern>
         <template>

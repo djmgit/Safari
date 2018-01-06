@@ -2,6 +2,8 @@ from flask import Flask, redirect, url_for, request, jsonify, render_template, g
 from flask_cors import CORS
 from bot_core import bot
 from flask_sqlalchemy import SQLAlchemy
+from flask_admin import Admin, BaseView, expose
+from flask_admin.contrib.sqla import ModelView
 import os
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -34,6 +36,20 @@ class Spots(db.Model):
         self.lon = lon
 
 db.create_all();
+
+class SpotTableView(ModelView):
+
+	# Admin view for Spot tab;e
+    can_create = True
+    can_view_details = True
+    column_searchable_list = ['name']
+    edit_modal = True
+    column_filters = ['name']
+
+# setup admin
+
+admin = Admin(app, name='Safari', template_mode='bootstrap3')
+admin.add_view(SpotTableView(Spots, db.session))
 
 chatbot = bot.Bot()
 

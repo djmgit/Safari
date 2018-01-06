@@ -347,5 +347,40 @@
             <srai>SIMILAR <star/></srai>
         </template>
     </category>
+
+    <category>
+        <pattern>REACH *</pattern>
+        <template>
+            action*reach*<star/>
+        </template>
+    </category>
+
+    <category>
+        <pattern>TELL ME HOW TO REACH *</pattern>
+        <template>
+            <srai>REACH <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW DO I REACH *</pattern>
+        <template>
+            <srai>REACH <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW CAN I GET TO *</pattern>
+        <template>
+            <srai>REACH <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW TO ARRIVE AT *</pattern>
+        <template>
+            <srai>REACH <star/></srai>
+        </template>
+    </category>
     
 </aiml>

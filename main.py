@@ -30,15 +30,22 @@ class Spots(db.Model):
     time_to_visit = db.Column(db.String)
     near_by_places = db.Column(db.String)
     similar_places = db.Column(db.String)
+    how_to_reach = db.Column(db.String)
     lat = db.Column(db.String)
     lon = db.Column(db.String)
 
-    def __init__(self, name, location, info, lat, lon):
+    def __init__(self, name, location, info, lat, lon, special_attraction, things_to_do, time_to_visit, near_by_places, similar_places, how_to_reach):
         self.name = name
         self.location = location
         self.info = info
         self.lat = lat
         self.lon = lon
+        self.special_attraction = special_attraction
+        self.things_to_do = things_to_do
+        self.time_to_visit = time_to_visit
+        self.near_by_places = near_by_places
+        self.similar_places = similar_places
+        self.how_to_reach = how_to_reach
 
 db.create_all();
 
@@ -130,6 +137,11 @@ def execute_action(action, param):
 		response['reply'] = get_similar_places(param)
 		response['place_searched'] = param
 
+	if action == 'reach':
+		# return means to travel to destination
+		response['reply'] = get_how_to_reach(param)
+		response['place_searched'] = param
+
 	response['status'] = 'success'
 	return response
 
@@ -172,6 +184,12 @@ def get_similar_places(param):
 	# extract info
 	item = Spots.query.filter_by(name=param).all()[0]
 	response = 'Here are some places which are similar to ' + param + '. ' + item['similar_places']
+	return response
+
+def get_how_to_reach(param):
+	# extract how to reach
+	item = Spots.query.filter_by(name=param).all()[0]
+	response = item['how_to_reach']
 	return response
 
 def get_suggestion():

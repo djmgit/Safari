@@ -1,0 +1,8 @@
+python-aiml
+Flask
+flask-sqlalchemy
+Flask-Migrate==1.8.0
+flask-admin
+flask-cors
+psycopg2
+gunicorn

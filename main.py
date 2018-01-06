@@ -1,6 +1,7 @@
 from flask import Flask, redirect, url_for, request, jsonify, render_template, g
 from flask_cors import CORS
 from bot_core import bot
+from flask_sqlalchemy import SQLAlchemy
 import os
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -8,7 +9,33 @@ APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 chatbot = bot.Bot()
 
 app = Flask(__name__)
+CORS(app)
+if os.environ.get('DATABASE_URL') is None:
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/deep'
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 app.config['SECRET_KEY'] = "THIS IS SECRET"
+
+db = SQLAlchemy(app)
+
+class Spots(db.Model):
+    __tablename__ = 'spots'
+
+    id = db.Column('spot_id', db.Integer, primary_key=True)
+    name = db.Column(db.String)
+    location = db.Column(db.String)
+    info = db.Column(db.String)
+    lat = db.Column(db.String)
+    lon = db.Column(db.String)
+
+    def __init__(self, name, location, info, lat, lon):
+        self.name = name
+        self.location = location
+        self.info = info
+        self.lat = lat
+        self.lon = lon
+
+db.create_all();
 
 @app.route('/')
 def index():
@@ -46,9 +73,11 @@ def execute_action(action, param):
 	if action == 'location':
 		# return location of place defined by param
 		response['location'] = get_location(param)
+		response['place_searched'] = param
 	if action == 'info':
 		# return info
 		response['info'] = get_info(param)
+		response['place_searched'] = param
 	if action == 'suggest':
 		# return suggestion
 		response['suggestion'] = get_suggestion()

@@ -102,14 +102,17 @@ def handle_message():
 
     if data["object"] == "page":
         for entry in data["entry"]:
-            for messaging_event in entry["messaging"]:
+            '''for messaging_event in entry["messaging"]:
                 if messaging_event.get("message"):
 
                     sender_id = messaging_event["sender"]["id"]        
                     recipient_id = messaging_event["recipient"]["id"]  
                     message_text = messaging_event["message"]["text"]  
-                    send_message_response(sender_id, 'hello this is safari')
-
+                    send_message_response(sender_id, 'hello this is safari')'''
+            webhook_event = entry['messaging'][0]
+            sender_id = webhook_event['sender']['id']
+            message = webhook_event['message']['text']
+            send_message(sender_id, 'hello this is safari')
 
     return "ok"
 
@@ -134,7 +137,7 @@ def create_response(rtype, action, param):
 	if rtype == 'statement':
 		reply = {}
 		reply['reply'] = param
-		reply['reply_type'] = 'statement'
+		reply['reply_type'] = 'answer'
 		response['reply'] = reply
 		print (param)
 
@@ -156,7 +159,7 @@ def execute_action(action, param):
 		reply = get_location(param)
 		response['reply'] = reply[1]
 		response['place_searched'] = param
-		response['reply_type'] = 'location'
+		response['reply_type'] = 'map'
 		response['answer_found'] = reply[0]
 
 		if reply[0] == 'ANSWER_FOUND_YES':

@@ -1,4 +1,5 @@
 python-aiml
+requests
 Flask
 flask-sqlalchemy
 Flask-Migrate==1.8.0

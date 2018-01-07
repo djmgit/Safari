@@ -6,8 +6,11 @@ from flask_admin import Admin, BaseView, expose
 from flask_admin.contrib.sqla import ModelView
 import os
 import random
+import requests
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+PAGE_ACCESS_TOKEN = 'token'
+VERIFY_TOKEN = 'verify'
 
 app = Flask(__name__)
 CORS(app)
@@ -79,12 +82,60 @@ def chat():
 		return jsonify({'reply': 'Sorry I cannot answer this :(', 'status': 'error'})
 	return create_response(response.get('type'), response.get('action'), response.get('param'))
 
+# method for checking webhook authenticity
+@app.route('/webhook', methods=['GET'])
+def handle_verification():
+    if (request.args.get('hub.verify_token', '') == VERIFY_TOKEN):
+        print("Verified")
+        return request.args.get('hub.challenge', '')
+    else:
+        print("Wrong token")
+        return "Error, wrong validation token"
+
+# method to handle messages coming from facebook
+@app.route('/webhook', methods=['POST'])
+def handle_message():
+    '''
+    Handle messages sent by facebook messenger to the applicaiton
+    '''
+    data = request.get_json()
+
+    if data["object"] == "page":
+        for entry in data["entry"]:
+            for messaging_event in entry["messaging"]:
+                if messaging_event.get("message"):
+
+                    sender_id = messaging_event["sender"]["id"]        
+                    recipient_id = messaging_event["recipient"]["id"]  
+                    message_text = messaging_event["message"]["text"]  
+                    send_message_response(sender_id, 'hello this is safari')
+
+
+    return "ok"
+
+def send_message(sender_id, message_text):
+    '''
+    Sending response back to the user using facebook graph API
+    '''
+    r = requests.post("https://graph.facebook.com/v2.6/me/messages",
+
+        params={"access_token": PAGE_ACCESS_TOKEN},
+
+        headers={"Content-Type": "application/json"},
+
+        data=json.dumps({
+        "recipient": {"id": sender_id},
+        "message": {"text": message_text}
+    }))
+
 def create_response(rtype, action, param):
 	response = {}
 
 	if rtype == 'statement':
-		response['reply'] = param
-		response['reply_type'] = 'statement'
+		reply = {}
+		reply['reply'] = param
+		reply['reply_type'] = 'statement'
+		response['reply'] = reply
 		print (param)
 
 	if rtype == 'action':

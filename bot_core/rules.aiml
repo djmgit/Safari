@@ -92,6 +92,27 @@
     </category>
 
     <category>
+        <pattern>* TELL ME * ABOUT *</pattern>
+        <template>
+            <srai>TELL ME ABOUT <star index="3"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* TELL ME ABOUT *</pattern>
+        <template>
+            <srai>TELL ME ABOUT <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* KNOW ABOUT *</pattern>
+        <template>
+            <srai>TELL ME ABOUT <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
         <pattern>SUGGEST ME SOME PLACES</pattern>
         <template>
             action*suggest

@@ -79,7 +79,15 @@ def chat():
 	response = chatbot.get_response(q)
 
 	if response['type'] == 'error':
-		return jsonify({'reply': 'Sorry I cannot answer this :(', 'status': 'error'})
+		reply = {}
+		ans = noinfo_response()
+		reply['reply'] = ans[1]
+		reply['ANSWER_FOUND'] = ans[0]
+		final_response = {}
+		final_response['reply'] = reply
+		final_response['status'] = 'error'
+		return jsonify(final_response)
+ 
 	return create_response(response.get('type'), response.get('action'), response.get('param'))
 
 # method for checking webhook authenticity

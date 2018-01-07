@@ -1,23 +1,4 @@
 <aiml version="1.0.1" encoding="UTF-8">
-<!-- basic_chat.aiml -->
-
-    <category>
-        <pattern>HELLO</pattern>
-        <template>
-            <random>
-                <li>statement*Well hello! How can I help you?</li>
-                <li>statement*Hi!</li>
-                <li>statement*Hi!, what do want you know?</li>               
-            </random>
-        </template>
-    </category>
-
-    <category>
-        <pattern>HI</pattern>
-        <template>
-            <srai>HELLO</srai>
-        </template>
-    </category>
 
     <category>
         <pattern>WHERE IS *</pattern>

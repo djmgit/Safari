@@ -1,0 +1,214 @@
+<aiml version="1.0.1" encoding="UTF-8">
+    <category>
+        <pattern>GREET</pattern>
+        <template>
+            <random>
+                <li>statement*Well hello! How can I help you?</li>
+                <li>statement*Hi!</li>
+                <li>statement*Hi!, what do want you know?</li>               
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HI</pattern>
+        <template>
+            <srai>GREET</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HELLO</pattern>
+        <template>
+            <srai>GREET</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HI SAFARI</pattern>
+        <template>
+            <srai>GREET</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HELLO SAFARI</pattern>
+        <template>
+            <srai>GREET</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HEY THERE</pattern>
+        <template>
+            <srai>GREET</srai>
+        </template>
+    </category>
+
+     <category>
+        <pattern>HEY THERE SAFARI</pattern>
+        <template>
+            <srai>GREET</srai>
+        </template>
+    </category>
+
+     <category>
+        <pattern>HOWDY</pattern>
+        <template>
+            <srai>GREET</srai>
+        </template>
+    </category>
+
+     <category>
+        <pattern>HEY</pattern>
+        <template>
+            <srai>GREET</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* HEY *</pattern>
+        <template>
+            <srai>GREET</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HEY *</pattern>
+        <template>
+            <srai>GREET</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* HEY</pattern>
+        <template>
+            <srai>GREET</srai>
+        </template>
+    </category>
+
+
+    <category>
+        <pattern>* HI *</pattern>
+        <template>
+            <srai>GREET</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* HI</pattern>
+        <template>
+            <srai>GREET</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HI *</pattern>
+        <template>
+            <srai>GREET</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* HELLO *</pattern>
+        <template>
+            <srai>GREET</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* HELLO</pattern>
+        <template>
+            <srai>GREET</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HELLO *</pattern>
+        <template>
+            <srai>GREET</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>NAME</pattern>
+        <template>
+            <random>
+                <li>statement*My name is Safari</li>
+                <li>statement*The name is Safari</li>
+                <li>statement*Safari at your service</li>               
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS YOUR NAME</pattern>
+        <template>
+            <srai>NAME</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>YOUR NAME</pattern>
+        <template>
+            <srai>NAME</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>TELL ME YOUR NAME</pattern>
+        <template>
+            <srai>NAME</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>DO YOU HAVE A NAME</pattern>
+        <template>
+            <srai>NAME</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>GIVE ME YOUR NAME</pattern>
+        <template>
+            <srai>NAME</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>GIVE YOUR NAME</pattern>
+        <template>
+            <srai>NAME</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>GIVE ME YOUR NAME</pattern>
+        <template>
+            <srai>NAME</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* NAME *</pattern>
+        <template>
+            <srai>NAME</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* NAME</pattern>
+        <template>
+            <srai>NAME</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>NAME *</pattern>
+        <template>
+            <srai>NAME</srai>
+        </template>
+    </category>
+    
+</aiml>

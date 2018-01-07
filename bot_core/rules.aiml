@@ -22,6 +22,27 @@
     </category>
 
     <category>
+        <pattern>* LOCATION OF *</pattern>
+        <template>
+            <srai>WHERE IS <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>LOCATION OF *</pattern>
+        <template>
+            <srai>WHERE IS <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* LOCATION OF *</pattern>
+        <template>
+            <srai>WHERE IS <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
         <pattern>TELL ME ABOUT *</pattern>
         <template>
             action*info*<star/>
@@ -42,10 +63,31 @@
         </template>
     </category>
 
-     <category>
+    <category>
         <pattern>TELL ME SOMETHING ABOUT *</pattern>
         <template>
             <srai>TELL ME ABOUT <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* INFORMATION ON *</pattern>
+        <template>
+            <srai>TELL ME ABOUT <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>INFORMATION ON *</pattern>
+        <template>
+            <srai>TELL ME ABOUT <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>TELL ME * ABOUT *</pattern>
+        <template>
+            <srai>TELL ME ABOUT <star index="2"/></srai>
         </template>
     </category>
 
@@ -99,9 +141,23 @@
     </category>
 
     <category>
-        <pattern>* SPECIALITY</pattern>
+        <pattern>* SPECIAL ABOUT *</pattern>
         <template>
-            <srai>SPECIAL <star/></srai>
+            <srai>SPECIAL <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* SPECIAL ATTRACTION OF *</pattern>
+        <template>
+            <srai>SPECIAL <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* SPECIAL AT *</pattern>
+        <template>
+            <srai>SPECIAL <star index="2"/></srai>
         </template>
     </category>
 
@@ -114,7 +170,7 @@
 
     <category>
         <pattern>THINGS TO DO AT *</pattern>
-        <template>
+        <template>sss
             <srai>ACTIVITY <star/></srai>
         </template>
     </category>
@@ -162,6 +218,20 @@
     </category>
 
     <category>
+        <pattern>* THINGS TO DO AT *</pattern>
+        <template>
+            <srai>ACTIVITY <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* DO AT *</pattern>
+        <template>
+            <srai>ACTIVITY <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
         <pattern>TOV *</pattern>
         <template>
             action*tov*<star/>
@@ -169,7 +239,7 @@
     </category>
 
     <category>
-        <pattern>TIME OF VISTING *</pattern>
+        <pattern>TIME OF VISITING *</pattern>
         <template>
             <srai>TOV <star/></srai>
         </template>
@@ -203,10 +273,31 @@
         </template>
     </category>
 
-     <category>
+    <category>
         <pattern>BEST TIME TO VISIT *</pattern>
         <template>
             <srai>TOV <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* TIME TO VISIT *</pattern>
+        <template>
+            <srai>TOV <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* TO VISIT *</pattern>
+        <template>
+            <srai>TOV <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* VISIT *</pattern>
+        <template>
+            <srai>TOV <star index="2"/></srai>
         </template>
     </category>
 
@@ -274,6 +365,20 @@
     </category>
 
     <category>
+        <pattern>* NEAR *</pattern>
+        <template>
+            <srai>NEARBY <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* NEARBY *</pattern>
+        <template>
+            <srai>NEARBY <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
         <pattern>SIMILAR *</pattern>
         <template>
             action*similar*<star/>
@@ -330,6 +435,27 @@
     </category>
 
     <category>
+        <pattern>* SIMILAR TO *</pattern>
+        <template>
+            <srai>SIMILAR <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* SIMILAR PLACES TO *</pattern>
+        <template>
+            <srai>SIMILAR <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SIMILAR PLACES TO *</pattern>
+        <template>
+            <srai>SIMILAR <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
         <pattern>REACH *</pattern>
         <template>
             action*reach*<star/>
@@ -363,5 +489,19 @@
             <srai>REACH <star/></srai>
         </template>
     </category>
-    
+
+    <category>
+        <pattern>* REACH *</pattern>
+        <template>
+            <srai>REACH <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* ARRIVE AT *</pattern>
+        <template>
+            <srai>REACH <star index="2"/></srai>
+        </template>
+    </category>
+
 </aiml>

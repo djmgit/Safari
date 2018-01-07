@@ -7,9 +7,10 @@ from flask_admin.contrib.sqla import ModelView
 import os
 import random
 import requests
+import json
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
-PAGE_ACCESS_TOKEN = 'token'
+PAGE_ACCESS_TOKEN = 'EAAZAhVq30VgsBAHso3u2Cw0uvD6ZALwg7SvucmFNclGEW1dlc3DOoaSMxT83Re0uU3CcHDY1QIcdxtHzCwUvpBQcx1S38E8LmvwzMbhtgyKroDkhU5qMh9d85qZBKLjJIE1J82YsWU9cffnoRPYPYzz5byfwucrTg4kED3178JhGdijVH1d'
 VERIFY_TOKEN = 'verify'
 
 app = Flask(__name__)

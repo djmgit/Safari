@@ -88,7 +88,7 @@ def create_response(rtype, action, param):
 		print (param)
 
 	if rtype == 'action':
-		response['reply'] = execute_action(action, param)
+		response['reply'] = execute_action(action, param.lower())
 
 	response['status'] = 'success'
 

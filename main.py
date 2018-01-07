@@ -125,7 +125,7 @@ def handle_message():
             response = chatbot.get_response(message)
 
             if response['type'] == 'error':
-            	send_message(sender_id, noinfo_response[1])
+            	send_message(sender_id, noinfo_response()[1])
 
             res = create_response(response.get('type'), response.get('action'), response.get('param'))
             send_message(sender_id, res['reply']['reply'])

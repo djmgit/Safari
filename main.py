@@ -121,7 +121,14 @@ def handle_message():
             webhook_event = entry['messaging'][0]
             sender_id = webhook_event['sender']['id']
             message = webhook_event['message']['text']
-            send_message(sender_id, 'hello this is safari')
+
+			response = chatbot.get_response(message)
+
+			if response['type'] == 'error':
+				send_message(sender_id, noinfo_response[1])
+ 
+			res = create_response(response.get('type'), response.get('action'), response.get('param'))
+            send_message(sender_id, res['reply']['reply'])
 
     return "ok"
 

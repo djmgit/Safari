@@ -122,12 +122,12 @@ def handle_message():
             sender_id = webhook_event['sender']['id']
             message = webhook_event['message']['text']
 
-			response = chatbot.get_response(message)
+            response = chatbot.get_response(message)
 
-			if response['type'] == 'error':
-				send_message(sender_id, noinfo_response[1])
- 
-			res = create_response(response.get('type'), response.get('action'), response.get('param'))
+            if response['type'] == 'error':
+            	send_message(sender_id, noinfo_response[1])
+
+            res = create_response(response.get('type'), response.get('action'), response.get('param'))
             send_message(sender_id, res['reply']['reply'])
 
     return "ok"

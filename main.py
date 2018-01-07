@@ -111,13 +111,6 @@ def handle_message():
 
     if data["object"] == "page":
         for entry in data["entry"]:
-            '''for messaging_event in entry["messaging"]:
-                if messaging_event.get("message"):
-
-                    sender_id = messaging_event["sender"]["id"]        
-                    recipient_id = messaging_event["recipient"]["id"]  
-                    message_text = messaging_event["message"]["text"]  
-                    send_message_response(sender_id, 'hello this is safari')'''
             webhook_event = entry['messaging'][0]
             sender_id = webhook_event['sender']['id']
             message = webhook_event['message']['text']
@@ -128,7 +121,8 @@ def handle_message():
             	send_message(sender_id, noinfo_response()[1])
 
             res = create_response(response.get('type'), response.get('action'), response.get('param'))
-            send_message(sender_id, res['reply']['reply'])
+            print (res)
+            send_message(sender_id, 'haha')
 
     return "ok"
 

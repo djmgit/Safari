@@ -120,9 +120,16 @@ def handle_message():
             if response['type'] == 'error':
             	send_message(sender_id, noinfo_response()[1])
 
-            res = create_response(response.get('type'), response.get('action'), response.get('param'))
-            print (res)
-            send_message(sender_id, 'haha')
+            else:
+            	r_type = response.get('type')
+            	r_action = response.get('action')
+            	r_param = response.get('param')
+
+            	if r_type == 'statement':
+            		send_message(sender_id, r_param)
+            	else:
+            		reply = execute_action(r_action, r_param.lower())
+            		send_message(sender_id, reply['reply'])
 
     return "ok"
 

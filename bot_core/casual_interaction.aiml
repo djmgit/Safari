@@ -210,5 +210,74 @@
             <srai>NAME</srai>
         </template>
     </category>
+
+    <category>
+        <pattern>WHATSUP</pattern>
+        <template>
+            <random>
+                <li>statement*Nothing as such, what about you?</li>
+                <li>statement*Trying to learn new things</li>
+                <li>statement*Exploring West Bengal</li>
+                <li>statement*Everything is fine!</li>
+                <li>statement*Everything is awesome!!</li>               
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HEY WHATSUP</pattern>
+        <template>
+            <srai>WHATSUP</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HEY WHAT ARE YOU DOING</pattern>
+        <template>
+            <srai>WHATSUP</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT ARE YOU DOING</pattern>
+        <template>
+            <srai>WHATSUP</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHATS GOING ON</pattern>
+        <template>
+            <srai>WHATSUP</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT ARE YOU UP TO</pattern>
+        <template>
+            <srai>WHATSUP</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* WHATSUP</pattern>
+        <template>
+            <srai>WHATSUP</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHATSUP *</pattern>
+        <template>
+            <srai>WHATSUP</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* WHATSUP *</pattern>
+        <template>
+            <srai>WHATSUP</srai>
+        </template>
+    </category>
     
 </aiml>

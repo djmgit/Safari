@@ -84,6 +84,7 @@ def create_response(rtype, action, param):
 
 	if rtype == 'statement':
 		response['reply'] = param
+		response['reply_type'] = 'statement'
 		print (param)
 
 	if rtype == 'action':
@@ -101,13 +102,23 @@ def execute_action(action, param):
 
 	if action == 'location':
 		# return location of place defined by param
-		response['reply'] = get_location(param)
+		reply = get_location(param)
+		response['reply'] = reply[1]
 		response['place_searched'] = param
+		response['reply_type'] = 'location'
+		response['answer_found'] = reply[0]
+
+		if reply[0] == 'ANSWER_FOUND_YES':
+			response['lat'] = reply[2]
+			response['lon'] = reply[3]
 
 	if action == 'info':
 		# return info
-		response['reply'] = get_info(param)
+		reply = get_info(param)
+		response['reply'] = reply[1]
 		response['place_searched'] = param
+		response['reply_type'] = 'info'
+		response['answer_found'] = reply[0]
 
 	if action == 'suggest':
 		# return suggestion
@@ -115,33 +126,51 @@ def execute_action(action, param):
 
 	if action == 'special':
 		# return special attraction
-		response['reply'] = get_sp_attr(param)
+		reply = get_sp_attr(param)
+		response['reply'] = reply[1]
 		response['place_searched'] = param
+		response['reply_type'] = 'special_attraction'
+		response['answer_found'] = reply[0]
 
 	if action == 'activity':
 		# return things to do
-		response['reply'] = get_things_to_do(param)
+		reply = get_things_to_do(param)
+		response['reply'] = reply[1]
 		response['place_searched'] = param
+		response['reply_type'] = 'things_to_do'
+		response['answer_found'] = reply[0]
 
 	if action == 'tov':
 		# return time to visit
-		response['reply'] = get_time_to_visit(param)
+		reply = get_time_to_visit(param)
+		response['reply'] = reply[1]
 		response['place_searched'] = param
+		response['reply_type'] = 'time_of_visit'
+		response['answer_found'] = reply[0]
 
 	if action == 'nearby':
 		# return nearby places
-		response['reply'] = get_near_by_places(param)
+		reply = get_near_by_places(param)
+		response['reply'] = reply[1]
 		response['place_searched'] = param
+		response['reply_type'] = 'nearby_places'
+		response['answer_found'] = reply[0]
 
 	if action == 'similar':
 		# return similar places
-		response['reply'] = get_similar_places(param)
+		reply = get_similar_places(param)
+		response['reply'] = reply[1]
 		response['place_searched'] = param
+		response['reply_type'] = 'similar_places'
+		response['answer_found'] = reply[0]
 
 	if action == 'reach':
 		# return means to travel to destination
-		response['reply'] = get_how_to_reach(param)
+		reply = get_how_to_reach(param)
+		response['reply'] = reply[1]
 		response['place_searched'] = param
+		response['reply_type'] = 'how_to_reach'
+		response['answer_found'] = reply[0]
 
 	return response
 
@@ -150,7 +179,7 @@ def get_location(param):
 	items = Spots.query.filter_by(name=param).all()
 	if len(items) != 0:
 		item = items[0]
-		return item.location
+		return 'ANSWER_FOUND_YES', item.location, item.lat, item.lon
 	else:
 		return noinfo_response()
 
@@ -160,7 +189,7 @@ def get_info(param):
 	if len(items) != 0:
 		item = items[0]
 		response = 'Here is some info on ' + param + '. ' + item.info
-		return response
+		return 'ANSWER_FOUND_YES', response
 	else:
 		return noinfo_response()
 
@@ -170,7 +199,7 @@ def get_sp_attr(param):
 	if len(items) != 0:
 		item = items[0]
 		response = 'Following are some special attractions of ' + param + '. ' + item.special_attraction
-		return response
+		return 'ANSWER_FOUND_YES', response
 	else:
 		return noinfo_response()
 
@@ -180,7 +209,7 @@ def get_things_to_do(param):
 	if len(items) != 0:
 		item = items[0]
 		response = 'Here are some things which you might consider doing at ' + param + '. ' + item.things_to_do
-		return response
+		return 'ANSWER_FOUND_YES', response
 	else:
 		return noinfo_response()
 
@@ -190,7 +219,7 @@ def get_time_to_visit(param):
 	if len(items) != 0:
 		item = items[0]
 		response = 'You may consider visiting ' + param + 'during ' + item.time_to_visit
-		return response
+		return 'ANSWER_FOUND_YES', response
 	else:
 		return noinfo_response()
 
@@ -200,7 +229,7 @@ def get_near_by_places(param):
 	if len(items) != 0:
 		item = items[0]
 		response = 'Here are some places close to ' + param + '. ' + item.near_by_places
-		return response
+		return 'ANSWER_FOUND_YES', response
 	else:
 		return noinfo_response()
 
@@ -210,7 +239,7 @@ def get_similar_places(param):
 	if len(items) != 0:
 		item = items
 		response = 'Here are some places which are similar to ' + param + '. ' + item.similar_places
-		return response
+		return 'ANSWER_FOUND_YES', response
 	else:
 		return noinfo_response()
 
@@ -220,7 +249,7 @@ def get_how_to_reach(param):
 	if len(items) != 0:
 		item = items[0]
 		response = item.how_to_reach
-		return response
+		return 'ANSWER_FOUND_YES', response
 	else:
 		return noinfo_response()
 
@@ -237,7 +266,7 @@ def noinfo_response():
 		"I have no answer for this now, but someday I shall learn!"
 	];
 
-	return response_list[random.randint(0, 4)]
+	return 'ANSWER_FOUND_NO', response_list[random.randint(0, 4)]
 
 # start the server
 if __name__ == "__main__":

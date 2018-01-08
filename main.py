@@ -230,6 +230,9 @@ def execute_action(action, param):
 		param = param.lower()
 		update_visit(param)
 
+	print('holaaaaaa')
+	print(param)
+
 	if action == 'location':
 		# return location of place defined by param
 		reply = get_location(param)

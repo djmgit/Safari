@@ -166,6 +166,9 @@ def handle_message():
 
             response = chatbot.get_response(message)
 
+            print('jajajajja')
+            print(response)
+
             if response['type'] == 'error':
             	send_message(sender_id, noinfo_response()[1])
 

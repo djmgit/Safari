@@ -165,30 +165,33 @@ def handle_message():
             print("kakakakaka")
             print(webhook_event)
             print(webhook_event[message])
-            sender_id = webhook_event['sender']['id']
-            message = webhook_event['message']['text']
-
-            response = chatbot.get_response(message)
-
-            print(message)
-            print('jajajajja')
-            print(response)
-
-            if response['type'] == 'error':
-            	send_message(sender_id, noinfo_response()[1])
-
-            else:
-            	r_type = response.get('type')
-            	r_action = response.get('action')
-            	r_param = response.get('param')
-
-            	if r_type == 'statement':
-            		send_message(sender_id, r_param)
+            try:
+            	sender_id = webhook_event['sender']['id']
+            	message = webhook_event['message']['text']
+	
+            	response = chatbot.get_response(message)
+	
+            	print(message)
+            	print('jajajajja')
+            	print(response)
+	
+            	if response['type'] == 'error':
+            		send_message(sender_id, noinfo_response()[1])
+	
             	else:
-            		reply = execute_action(r_action, r_param)
-            		print(reply.get('reply'))
-            		print('hahahahaha')
-            		send_message(sender_id, reply['reply'])
+            		r_type = response.get('type')
+            		r_action = response.get('action')
+            		r_param = response.get('param')
+	
+            		if r_type == 'statement':
+            			send_message(sender_id, r_param)
+            		else:
+            			reply = execute_action(r_action, r_param)
+            			print(reply.get('reply'))
+            			print('hahahahaha')
+            			send_message(sender_id, reply['reply'])
+            except:
+            	send_message(sender_id, 'Looks like I am having some trouble. I will be back within a while')
 
     return "ok"
 

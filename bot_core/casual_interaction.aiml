@@ -505,4 +505,22 @@
         </template>
     </category>
 
+    <category>
+        <pattern>HOW ARE YOU</pattern>
+        <template>
+            <random>
+                <li>statement*Fine</li>
+                <li>statement*Great</li>
+                <li>statement*Awesome</li>
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW ARE YOU *</pattern>
+        <template>
+            <srai>HOW ARE YOU</srai>
+        </template>
+    </category>
+
 </aiml>

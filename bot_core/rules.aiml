@@ -190,20 +190,6 @@
     </category>
 
     <category>
-        <pattern>SUGGEST ME SOME PLACES</pattern>
-        <template>
-            action*suggest
-        </template>
-    </category>
-
-    <category>
-        <pattern>SUGGEST ME A TRIP</pattern>
-        <template>
-            <srai>SUGGEST ME SOME PLACES</srai>
-        </template>
-    </category>
-
-    <category>
         <pattern>SPECIAL *</pattern>
         <template>
             action*special*<star/>
@@ -330,6 +316,13 @@
     </category>
 
     <category>
+        <pattern>WHAT TO DO IN *</pattern>
+        <template>
+            <srai>ACTIVITY <star/></srai>
+        </template>
+    </category>
+
+    <category>
         <pattern>* THINGS TO DO AT *</pattern>
         <template>
             <srai>ACTIVITY <star index="2"/></srai>
@@ -337,7 +330,21 @@
     </category>
 
     <category>
+        <pattern>* THINGS TO DO IN *</pattern>
+        <template>
+            <srai>ACTIVITY <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
         <pattern>* DO AT *</pattern>
+        <template>
+            <srai>ACTIVITY <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* DO IN *</pattern>
         <template>
             <srai>ACTIVITY <star index="2"/></srai>
         </template>
@@ -613,6 +620,41 @@
         <pattern>* ARRIVE AT *</pattern>
         <template>
             <srai>REACH <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUGGEST ME SOME PLACES</pattern>
+        <template>
+            action*suggest
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUGGEST ME A TRIP</pattern>
+        <template>
+            <srai>SUGGEST ME SOME PLACES</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>TELL ME SOME PLACES TO VISIT</pattern>
+        <template>
+            <srai>SUGGEST ME SOME PLACES</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUGGEST SOME PLACES</pattern>
+        <template>
+            <srai>SUGGEST ME SOME PLACES</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUGGEST *</pattern>
+        <template>
+            <srai>SUGGEST ME SOME PLACES</srai>
         </template>
     </category>
 

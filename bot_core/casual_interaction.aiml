@@ -279,5 +279,223 @@
             <srai>WHATSUP</srai>
         </template>
     </category>
+
+    <category>
+        <pattern>ABOUT YOU</pattern>
+        <template>
+            statement*I am your friendly travel assistant. Ask me about tourist places in West Bengal.
+            I will try my best to provide an answer. Currently I provide information on location,
+            description, special attraction, things to do, nearby places, similar places and details 
+            about related to how to reach a given place. I may not be able to provide information about
+            everything. I am still learning! 
+        </template>
+    </category>
+
+    <category>
+        <pattern>TELL ME SOMETHING ABOUT YOU</pattern>
+        <template>
+            <srai>ABOUT</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>TELL ME SOMETHING ABOUT YOURSELF</pattern>
+        <template>
+            <srai>ABOUT</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT CAN YOU DO</pattern>
+        <template>
+            <srai>ABOUT</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* WHAT CAN YOU DO</pattern>
+        <template>
+            <srai>ABOUT</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* YOU CAN DO</pattern>
+        <template>
+            <srai>ABOUT</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHO ARE YOU</pattern>
+        <template>
+            <srai>ABOUT</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* WHO ARE YOU</pattern>
+        <template>
+            <srai>ABOUT</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT ARE YOU</pattern>
+        <template>
+            <srai>ABOUT</srai>
+        </template>
+    </category>
     
+    <category>
+        <pattern>* WHAT ARE YOU</pattern>
+        <template>
+            <srai>ABOUT</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* SOMETHING ABOUT YOU</pattern>
+        <template>
+            <srai>ABOUT</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* SOMETHING ABOUT YOURSELF</pattern>
+        <template>
+            <srai>ABOUT</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* WHAT ARE YOUR ABILITIES</pattern>
+        <template>
+            <srai>ABOUT</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* YOUR ABILITIES</pattern>
+        <template>
+            <srai>ABOUT</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* CAN YOU DO *</pattern>
+        <template>
+            <srai>ABOUT</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* ABLE *</pattern>
+        <template>
+            <srai>ABOUT</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>APPRECIATE</pattern>
+        <template>
+            <random>
+                <li>statement*Your welcome</li>
+                <li>statement*Always at your service</li>
+                <li>statement*Just doing my job</li>
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>GREAT</pattern>
+        <template>
+            <srai>APPRECIATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* GREAT</pattern>
+        <template>
+            <srai>APPRECIATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>AWESOME</pattern>
+        <template>
+            <srai>APPRECIATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* AWESOME</pattern>
+        <template>
+            <srai>APPRECIATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>AWESOME *</pattern>
+        <template>
+            <srai>APPRECIATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* AWESOME *</pattern>
+        <template>
+            <srai>APPRECIATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>THANKS</pattern>
+        <template>
+            <srai>APPRECIATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>THANK YOU</pattern>
+        <template>
+            <srai>APPRECIATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>THANKS *</pattern>
+        <template>
+            <srai>APPRECIATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* THANKS</pattern>
+        <template>
+            <srai>APPRECIATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>THANKYOU</pattern>
+        <template>
+            <srai>APPRECIATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>THANKYOU *</pattern>
+        <template>
+            <srai>APPRECIATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>THANK YOU *</pattern>
+        <template>
+            <srai>APPRECIATE</srai>
+        </template>
+    </category>
+
 </aiml>

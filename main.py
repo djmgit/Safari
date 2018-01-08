@@ -161,6 +161,10 @@ def handle_message():
     if data["object"] == "page":
         for entry in data["entry"]:
             webhook_event = entry['messaging'][0]
+
+            print("kakakakaka")
+            print(webhook_event)
+            print(webhook_event[message])
             sender_id = webhook_event['sender']['id']
             message = webhook_event['message']['text']
 

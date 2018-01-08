@@ -8,6 +8,7 @@ import os
 import random
 import requests
 import json
+from googletrans import Translator
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 PAGE_ACCESS_TOKEN = 'EAAZAhVq30VgsBAHso3u2Cw0uvD6ZALwg7SvucmFNclGEW1dlc3DOoaSMxT83Re0uU3CcHDY1QIcdxtHzCwUvpBQcx1S38E8LmvwzMbhtgyKroDkhU5qMh9d85qZBKLjJIE1J82YsWU9cffnoRPYPYzz5byfwucrTg4kED3178JhGdijVH1d'
@@ -69,6 +70,7 @@ admin = Admin(app, name='Safari', template_mode='bootstrap3')
 admin.add_view(SpotTableView(Spots, db.session))
 
 chatbot = bot.Bot()
+translator = Translator()
 
 @app.route('/')
 def index():
@@ -77,7 +79,17 @@ def index():
 @app.route('/api/chat')
 def chat():
 	q = request.args.get('q')
-	response = chatbot.get_response(q)
+	chat_input = ""
+	try:
+		language = translator.detect(q)
+		if language.lang != 'en':
+			t = translator.translate(q, dest='en')
+			chat_input = t.text
+		else:
+			chat_input = q
+	except:
+		chat_input = q
+	response = chatbot.get_response(chat_input)
 
 	if response['type'] == 'error':
 		reply = {}

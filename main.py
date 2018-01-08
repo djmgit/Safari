@@ -178,7 +178,7 @@ def handle_message():
             		send_message(sender_id, r_param)
             	else:
             		reply = execute_action(r_action, r_param)
-            		print(reply)
+            		print(reply.get('reply'))
             		print('hahahahaha')
             		send_message(sender_id, reply['reply'])
 

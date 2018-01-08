@@ -5,7 +5,7 @@
             <random>
                 <li>statement*Well hello! How can I help you?</li>
                 <li>statement*Hi!</li>
-                <li>statement*Hi!, what do want you know?</li>               
+                <li>statement*What do you want to know?</li>               
             </random>
         </template>
     </category>

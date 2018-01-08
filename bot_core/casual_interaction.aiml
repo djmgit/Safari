@@ -498,4 +498,11 @@
         </template>
     </category>
 
+    <category>
+        <pattern>BYE</pattern>
+        <template>
+            statement*see you soon
+        </template>
+    </category>
+
 </aiml>

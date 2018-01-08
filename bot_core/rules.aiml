@@ -15,9 +15,23 @@
     </category>
 
     <category>
+        <pattern>* WHERE IS * LOCATED</pattern>
+        <template>
+            <srai>WHERE IS <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
         <pattern>WHERE IS * LOCATION</pattern>
         <template>
             <srai>WHERE IS <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* WHERE IS * LOCATED</pattern>
+        <template>
+            <srai>WHERE IS <star index="2"/></srai>
         </template>
     </category>
 
@@ -39,6 +53,41 @@
         <pattern>* LOCATION OF *</pattern>
         <template>
             <srai>WHERE IS <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* WHERE IS *</pattern>
+        <template>
+            <srai>WHERE IS <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>ADDRESS OF *</pattern>
+        <template>
+            <srai>WHERE IS <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* ADDRESS</pattern>
+        <template>
+            <srai>WHERE IS <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* ADDRESS *</pattern>
+        <template>
+            <srai>WHERE IS <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>ADDRESS *</pattern>
+        <template>
+            <srai>WHERE IS <star/></srai>
         </template>
     </category>
 
@@ -71,6 +120,13 @@
     </category>
 
     <category>
+        <pattern>* TELL ME SOMETHING ABOUT *</pattern>
+        <template>
+            <srai>TELL ME ABOUT <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
         <pattern>* INFORMATION ON *</pattern>
         <template>
             <srai>TELL ME ABOUT <star index="2"/></srai>
@@ -79,6 +135,27 @@
 
     <category>
         <pattern>INFORMATION ON *</pattern>
+        <template>
+            <srai>TELL ME ABOUT <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* INFO *</pattern>
+        <template>
+            <srai>TELL ME ABOUT <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>INFO *</pattern>
+        <template>
+            <srai>TELL ME ABOUT <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* INFO</pattern>
         <template>
             <srai>TELL ME ABOUT <star/></srai>
         </template>
@@ -177,6 +254,20 @@
 
     <category>
         <pattern>* SPECIAL AT *</pattern>
+        <template>
+            <srai>SPECIAL <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* SPECIAL *</pattern>
+        <template>
+            <srai>SPECIAL <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* SPECIALITY *</pattern>
         <template>
             <srai>SPECIAL <star index="2"/></srai>
         </template>

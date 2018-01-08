@@ -53,9 +53,29 @@ class Spots(db.Model):
         self.similar_places = similar_places
         self.how_to_reach = how_to_reach
 
+class Visits(db.Model):
+	__tablename__ = 'visits'
+
+	id = db.Column('place_id', db.Integer, primary_key=True)
+	name = db.Column(db.String)
+	count = db.Column(db.Integer)
+
+	def __init__(self, name, count):
+		self.name = name
+		self.count = count
+
 db.create_all();
 
 class SpotTableView(ModelView):
+
+	# Admin view for Spot table
+    can_create = True
+    can_view_details = True
+    column_searchable_list = ['name']
+    edit_modal = True
+    column_filters = ['name']
+
+class VisitsTableView(ModelView):
 
 	# Admin view for Spot tab;e
     can_create = True
@@ -68,6 +88,7 @@ class SpotTableView(ModelView):
 
 admin = Admin(app, name='Safari', template_mode='bootstrap3')
 admin.add_view(SpotTableView(Spots, db.session))
+admin.add_view(VisitsTableView(Visits, db.session))
 
 chatbot = bot.Bot()
 translator = Translator()
@@ -102,6 +123,20 @@ def chat():
 		return jsonify(final_response)
  
 	return create_response(response.get('type'), response.get('action'), response.get('param'))
+
+@app.route('/api/statistics')
+def stat():
+	statistics = Visits.query.all()
+	table = []
+	for stat in statistics:
+		table.append({'name': stat.name, 'count': stat.count})
+
+	response = {}
+	response['number_of_spots'] = len(statistics)
+	response['statistics'] = table
+	response['status'] = 'success'
+
+	return jsonify(response)
 
 # method for checking webhook authenticity
 @app.route('/webhook', methods=['GET'])
@@ -185,6 +220,7 @@ def execute_action(action, param):
 
 	if param != None:
 		param = param.lower()
+		update_visit(param)
 
 	if action == 'location':
 		# return location of place defined by param
@@ -364,6 +400,17 @@ def noinfo_response():
 	];
 
 	return 'ANSWER_FOUND_NO', response_list[random.randint(0, 4)]
+
+def update_visit(param):
+	items = Visits.query.filter_by(name=param).all()
+	if len(items) == 0:
+		item = Visits(param, 1)
+		db.session.add(item)
+		db.session.commit()
+	else:
+		item = items[0]
+		item.count += 1
+		db.session.commit()
 
 # start the server
 if __name__ == "__main__":

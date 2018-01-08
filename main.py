@@ -164,7 +164,7 @@ def handle_message():
 
             print("kakakakaka")
             print(webhook_event)
-            print(webhook_event[message])
+            print(webhook_event['message'])
             try:
             	sender_id = webhook_event['sender']['id']
             	message = webhook_event['message']['text']

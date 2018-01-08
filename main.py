@@ -60,7 +60,7 @@ class Visits(db.Model):
 	name = db.Column(db.String)
 	count = db.Column(db.Integer)
 
-	def __init__(self, name, count):
+	def __init__(self, name='', count=''):
 		self.name = name
 		self.count = count
 

@@ -658,4 +658,138 @@
         </template>
     </category>
 
+    <category>
+        <pattern>PACKAGE</pattern>
+        <template>
+            statement*Please visit https://www.wbtdcl.com/package for more information on this.
+            Happy safe journey
+        </template>
+    </category>
+
+    <category>
+        <pattern>MAKE A TRIP</pattern>
+        <template>
+            <srai>PACKAGE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>PLAN A TRIP</pattern>
+        <template>
+            <srai>PACKAGE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUGGEST ME A TRIP</pattern>
+        <template>
+            <srai>PACKAGE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUGGEST A TRIP</pattern>
+        <template>
+            <srai>PACKAGE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* PLAN A TRIP</pattern>
+        <template>
+            <srai>PACKAGE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>PLAN A TRIP</pattern>
+        <template>
+            <srai>PACKAGE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>PLAN A PACKAGE</pattern>
+        <template>
+            <srai>PACKAGE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUGGEST A PACKAGE</pattern>
+        <template>
+            <srai>PACKAGE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* MAKE A TRIP</pattern>
+        <template>
+            <srai>PACKAGE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* PLAN A TRIP</pattern>
+        <template>
+            <srai>PACKAGE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* PLAN ME A TRIP</pattern>
+        <template>
+            <srai>PACKAGE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* SUGGEST ME A TRIP</pattern>
+        <template>
+            <srai>PACKAGE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* SUGGEST ME A PACKAGE</pattern>
+        <template>
+            <srai>PACKAGE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUGGEST * PACKAGE</pattern>
+        <template>
+            <srai>PACKAGE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>MAKE * TRIP</pattern>
+        <template>
+            <srai>PACKAGE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUGGEST * TRIP</pattern>
+        <template>
+            <srai>PACKAGE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>PLAN * PACKAGE</pattern>
+        <template>
+            <srai>PACKAGE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>PLAN * TRIP</pattern>
+        <template>
+            <srai>PACKAGE</srai>
+        </template>
+    </category>
+
 </aiml>

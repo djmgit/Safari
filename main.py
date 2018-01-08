@@ -131,6 +131,8 @@ def stat():
 	for stat in statistics:
 		table.append({'name': stat.name, 'count': stat.count})
 
+	table.sort(key=lambda x:x['name'])
+
 	response = {}
 	response['number_of_spots'] = len(statistics)
 	response['statistics'] = table
@@ -404,9 +406,13 @@ def noinfo_response():
 def update_visit(param):
 	items = Visits.query.filter_by(name=param).all()
 	if len(items) == 0:
-		item = Visits(param, 1)
-		db.session.add(item)
-		db.session.commit()
+		is_present = Spots.query.filter_by(name=param).all()
+		if len(is_present) != 0:
+			item = Visits(param, 1)
+			db.session.add(item)
+			db.session.commit()
+		else:
+			return
 	else:
 		item = items[0]
 		item.count += 1

@@ -63,4 +63,25 @@
 		</template>
 	</category>
 
+	<category>
+		<pattern>* WEST BENGAL</pattern>
+		<template>
+			<srai>WESTBENGAL</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>WEST BENGAL *</pattern>
+		<template>
+			<srai>WESTBENGAL</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* WEST BENGAL *</pattern>
+		<template>
+			<srai>WESTBENGAL</srai>
+		</template>
+	</category>
+
 </aiml>

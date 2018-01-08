@@ -140,7 +140,7 @@ def handle_message():
             	if r_type == 'statement':
             		send_message(sender_id, r_param)
             	else:
-            		reply = execute_action(r_action, r_param.lower())
+            		reply = execute_action(r_action, r_param)
             		send_message(sender_id, reply['reply'])
 
     return "ok"
@@ -171,7 +171,7 @@ def create_response(rtype, action, param):
 		print (param)
 
 	if rtype == 'action':
-		response['reply'] = execute_action(action, param.lower())
+		response['reply'] = execute_action(action, param)
 
 	response['status'] = 'success'
 
@@ -182,6 +182,9 @@ def execute_action(action, param):
 	#execute the action here
 
 	response = {}
+
+	if param != None:
+		param = param.lower()
 
 	if action == 'location':
 		# return location of place defined by param
@@ -202,10 +205,6 @@ def execute_action(action, param):
 		response['place_searched'] = param
 		response['reply_type'] = 'info'
 		response['answer_found'] = reply[0]
-
-	if action == 'suggest':
-		# return suggestion
-		response['reply'] = get_suggestion()
 
 	if action == 'special':
 		# return special attraction
@@ -253,6 +252,13 @@ def execute_action(action, param):
 		response['reply'] = reply[1]
 		response['place_searched'] = param
 		response['reply_type'] = 'how_to_reach'
+		response['answer_found'] = reply[0]
+
+	if action == 'suggest':
+		# return suggestion
+		reply = get_suggestion()
+		response['reply'] = reply[1]
+		response['reply_type'] = param
 		response['answer_found'] = reply[0]
 
 	return response
@@ -338,7 +344,15 @@ def get_how_to_reach(param):
 
 def get_suggestion():
 	# generate suggestion
-	return 'suggestion'
+	items = Spots.query.all()
+	if len(items) != 0:
+		num = min(5, len(items))
+		suggestion = random.sample(items, num)
+		suggestion = [place.name for place in suggestion]
+		suggestion = ", ".join(suggestion)
+		return 'ANSWER_FOUND_YES', suggestion
+	else:
+		return noinfo_response()
 
 def noinfo_response():
 	response_list = [

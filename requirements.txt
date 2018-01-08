@@ -1,4 +1,5 @@
 python-aiml
+googletrans
 requests
 Flask
 flask-sqlalchemy

@@ -191,7 +191,7 @@ def execute_action(action, param):
 		reply = get_location(param)
 		response['reply'] = reply[1]
 		response['place_searched'] = param
-		response['reply_type'] = 'map'
+		response['reply_type'] = 'map' if reply[0] == 'ANSWER_FOUND_YES' else 'web'
 		response['answer_found'] = reply[0]
 
 		if reply[0] == 'ANSWER_FOUND_YES':
@@ -203,7 +203,7 @@ def execute_action(action, param):
 		reply = get_info(param)
 		response['reply'] = reply[1]
 		response['place_searched'] = param
-		response['reply_type'] = 'info'
+		response['reply_type'] = 'info' if reply[0] == 'ANSWER_FOUND_YES' else 'web'
 		response['answer_found'] = reply[0]
 
 	if action == 'special':
@@ -211,7 +211,7 @@ def execute_action(action, param):
 		reply = get_sp_attr(param)
 		response['reply'] = reply[1]
 		response['place_searched'] = param
-		response['reply_type'] = 'special_attraction'
+		response['reply_type'] = 'special_attraction' if reply[0] == 'ANSWER_FOUND_YES' else 'web'
 		response['answer_found'] = reply[0]
 
 	if action == 'activity':
@@ -219,7 +219,7 @@ def execute_action(action, param):
 		reply = get_things_to_do(param)
 		response['reply'] = reply[1]
 		response['place_searched'] = param
-		response['reply_type'] = 'things_to_do'
+		response['reply_type'] = 'things_to_do' if reply[0] == 'ANSWER_FOUND_YES' else 'web'
 		response['answer_found'] = reply[0]
 
 	if action == 'tov':
@@ -227,7 +227,7 @@ def execute_action(action, param):
 		reply = get_time_to_visit(param)
 		response['reply'] = reply[1]
 		response['place_searched'] = param
-		response['reply_type'] = 'time_of_visit'
+		response['reply_type'] = 'time_of_visit' if reply[0] == 'ANSWER_FOUND_YES' else 'web'
 		response['answer_found'] = reply[0]
 
 	if action == 'nearby':
@@ -235,7 +235,7 @@ def execute_action(action, param):
 		reply = get_near_by_places(param)
 		response['reply'] = reply[1]
 		response['place_searched'] = param
-		response['reply_type'] = 'nearby_places'
+		response['reply_type'] = 'nearby_places' if reply[0] == 'ANSWER_FOUND_YES' else 'web'
 		response['answer_found'] = reply[0]
 
 	if action == 'similar':
@@ -243,7 +243,7 @@ def execute_action(action, param):
 		reply = get_similar_places(param)
 		response['reply'] = reply[1]
 		response['place_searched'] = param
-		response['reply_type'] = 'similar_places'
+		response['reply_type'] = 'similar_places' if reply[0] == 'ANSWER_FOUND_YES' else 'web'
 		response['answer_found'] = reply[0]
 
 	if action == 'reach':
@@ -251,14 +251,14 @@ def execute_action(action, param):
 		reply = get_how_to_reach(param)
 		response['reply'] = reply[1]
 		response['place_searched'] = param
-		response['reply_type'] = 'how_to_reach'
+		response['reply_type'] = 'how_to_reach' if reply[0] == 'ANSWER_FOUND_YES' else 'web'
 		response['answer_found'] = reply[0]
 
 	if action == 'suggest':
 		# return suggestion
 		reply = get_suggestion()
 		response['reply'] = reply[1]
-		response['reply_type'] = param
+		response['reply_type'] = 'suggestion' if reply[0] == 'ANSWER_FOUND_YES' else 'web'
 		response['answer_found'] = reply[0]
 
 	return response
@@ -326,7 +326,7 @@ def get_similar_places(param):
 	# extract info
 	items = Spots.query.filter_by(name=param).all()
 	if len(items) != 0:
-		item = items
+		item = items[0]
 		response = 'Here are some places which are similar to ' + param + '. ' + item.similar_places
 		return 'ANSWER_FOUND_YES', response
 	else:

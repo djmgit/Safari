@@ -281,7 +281,7 @@
     </category>
 
     <category>
-        <pattern>ABOUT YOU</pattern>
+        <pattern>ABOUT</pattern>
         <template>
             statement*I am your friendly travel assistant. Ask me about tourist places in West Bengal.
             I will try my best to provide an answer. Currently I provide information on location,

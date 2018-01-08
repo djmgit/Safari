@@ -268,7 +268,7 @@
 
     <category>
         <pattern>THINGS TO DO AT *</pattern>
-        <template>sss
+        <template>
             <srai>ACTIVITY <star/></srai>
         </template>
     </category>
@@ -281,7 +281,7 @@
     </category>
 
     <category>
-        <pattern>SUGEGST SOME THINGS TO DO AT *</pattern>
+        <pattern>SUGGEST SOME THINGS TO DO AT *</pattern>
         <template>
             <srai>ACTIVITY <star/></srai>
         </template>
@@ -296,6 +296,55 @@
 
     <category>
         <pattern>WHAT SHOULD WE DO AT *</pattern>
+        <template>
+            <srai>ACTIVITY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>THINGS TO DO IN *</pattern>
+        <template>
+            <srai>ACTIVITY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUGGEST ME SOME THINGS TO DO IN *</pattern>
+        <template>
+            <srai>ACTIVITY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUGGEGST SOME THINGS TO DO IN *</pattern>
+        <template>
+            <srai>ACTIVITY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUGEGST THINGS TO DO IN *</pattern>
+        <template>
+            <srai>ACTIVITY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUGGEGST ME THINGS TO DO IN *</pattern>
+        <template>
+            <srai>ACTIVITY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT DO YOU SUGGEST TO DO IN *</pattern>
+        <template>
+            <srai>ACTIVITY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT SHOULD WE DO IN *</pattern>
         <template>
             <srai>ACTIVITY <star/></srai>
         </template>

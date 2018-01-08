@@ -166,6 +166,7 @@ def handle_message():
 
             response = chatbot.get_response(message)
 
+            print(message)
             print('jajajajja')
             print(response)
 
